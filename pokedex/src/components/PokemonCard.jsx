@@ -7,7 +7,7 @@ function PokemonCard(props) {
             ) : (
                 <p>???</p>
             )}
-            <figcaption>Bulbasaur.</figcaption>
+            <figcaption>{props.name}</figcaption>
         </figure>
     );
 }
