@@ -1,27 +1,27 @@
 
 import './App.css'
+import NavBar from './components/NavBar';
 import PokemonCard from './components/PokemonCard';
 import { useState } from 'react';
 
 function App() {
 
- let [pokemonIndex, setPokemonIndex] = useState(0);
-  function handleClick() {
-    setPokemonIndex(pokemonIndex + 1);}
-  let pokemon = {
-    name: pokemonList[pokemonIndex].name,
-    imgSrc: pokemonList[pokemonIndex].imgSrc,
-  }
+  const [pokemonIndex, setPokemonIndex] = useState(0);
+
+
+  const pokemon = pokemonList[pokemonIndex]
+
   return (
     <div>
+      <NavBar pokemonIndex={pokemonIndex} setPokemonIndex={setPokemonIndex} pokeLength={pokemonList.length}/>
       <PokemonCard
         pokemon={pokemon}
       />
       <div>
-        <button onClick={handleClick}>Next</button>
+
       </div>
     </div>
-    
+
   );
 }
 
